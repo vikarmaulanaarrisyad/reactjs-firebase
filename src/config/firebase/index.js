@@ -1,7 +1,7 @@
 // import React from 'react'
 
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 // import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
@@ -18,6 +18,7 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const register = createUserWithEmailAndPassword;
+export const login    = signInWithEmailAndPassword;
 
 // export { app , auth , register}
 

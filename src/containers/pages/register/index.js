@@ -25,6 +25,12 @@ class Register extends Component {
 
     // Diambil berdasarkan redux dispatch, ut dikirmkan ke redux action
     this.props.registerAPI({email, password})
+
+    // Mengkosongkan inputan
+    this.setState({
+      email: '',
+      password: '',
+    })
   }
 
   render() {
@@ -37,8 +43,8 @@ class Register extends Component {
                 Register Page
               </h1>
             </div>
-              <input className='form-control' placeholder='Email' type='text' id='email' onChange={this.handleChangeText} />
-              <input className='form-control' placeholder='Password' type='password' id='password' onChange={this.handleChangeText} />
+              <input className='form-control' placeholder='Email' type='text' id='email' onChange={this.handleChangeText} value={this.state.email} />
+              <input className='form-control' placeholder='Password' type='password' id='password' onChange={this.handleChangeText} value={this.state.password} />
               <Button onClick={this.handleRegisterSubmit} title='Register' loading={this.props.isLoading} />
           </div>
         </div>

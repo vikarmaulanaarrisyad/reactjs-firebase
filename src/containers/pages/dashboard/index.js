@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+
 
 class Dashboard extends Component {
   render() {
     return (
       <div>
-        <p class="text-cyan-800">
-            Hello world!
-        </p>
+       <h1>Halo {this.state.user.email}</h1>
       </div>
     )
   }
 }
 
-export default Dashboard
+// Membuat Function reduxState
+const reduxState = (state) => ({
+  user: state.user
+})
+
+export default connect(reduxState,null)(Dashboard)

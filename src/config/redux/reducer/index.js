@@ -3,7 +3,7 @@ const initialState = {
     popup: false,
     isLogin: false,
     isLoading: false,
-    user: 'Vikar'
+    user: {}
   }
   
   // Reducer : Kumpulan aksi ut merubah store
